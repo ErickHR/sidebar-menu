@@ -1,0 +1,131 @@
+
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --menu__background-color : #A29BFE;
+    --menu__link-color : rgb(248, 233, 233);
+    --menu__link-color-active : rgb(50, 48, 48);
+}
+
+body {
+    height: 100%;
+}
+
+.menu {
+    position: fixed;
+    background-color: var(--menu__background-color);
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    width: 220px;
+    border-radius: 10px;
+    padding-top: 40px;
+    padding-left: 5px;
+    transition: width 0.5s;
+}
+
+.menu--active {
+    width: 60px;
+}
+
+.menu__options {
+    position: relative;
+}
+
+.menu__item {
+    list-style: none;
+    overflow-x: hidden;
+}
+
+.menu__link {
+    text-decoration: none;
+    padding: 10px 0px 10px 15px;
+    color: var(--menu__link-color);
+    display: flex;
+}
+
+.menu__link:active {
+    color: var(--menu__link-color);
+}
+
+.menu__icon {
+    font-size: 1.2em;
+    margin-right: 30px;
+    display: flex;
+}
+
+.menu__text {
+    display: flex;
+}
+
+.menu__item--active {
+    background-color: white;
+    border-radius: 14px 0 0 14px;
+}
+
+.menu__item.menu__item--active .menu__link {
+    color: var(--menu__link-color-active);
+}
+
+.menu__item--active-previous-sibling {
+    border-bottom-right-radius: 20px;
+    box-shadow: 20px 20px 0 0 white;
+}
+
+.menu__item--active + .menu__item {
+    border-top-right-radius: 20px;
+    box-shadow: 20px -20px 0 0 white;
+}
+
+.menu__button {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--menu__background-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu__toggle-icon {
+    color: antiquewhite;
+    display: flex;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.menu__button.menu__button--active {
+    background-color: rgb(236, 127, 63);
+}
+
+.menu__toggle-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.menu__button.menu__button--active .menu__icon--open {
+    display: none;
+}
+
+.menu__button.menu__button--active .menu__icon--close {
+    display: flex;
+}
+
+.menu__button .menu__icon--open {
+    display: flex;
+}
+
+.menu__button .menu__icon--close {
+    display: none;
+}
+
